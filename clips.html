@@ -20,15 +20,15 @@
             <p>Tamanho do piso/porcelanato em (cm):</p>
             <span>
                 <p><strong>Lado A&nbsp;</strong></p>
-                <input class="x" id="x" name="A" type="number" value="" placeholder="medida lado A em cm"
+                <input class="lado" id="lado-a" name="A" type="number" value="" placeholder="medida lado A em cm"
                     oninput="maxLengthFunction()">
-                <p>(Recomendado: ? clips para o lado A)</p>
+                <p id="clip-recomended-lado-a">(Recomendado: ? clips para o lado A)</p>
             </span>
 
             <span>
                 <p><strong>Lado B&nbsp;</strong></p>
-                <input class="x" id="x" name="B" type="number" value="" placeholder="medida lado B em cm">
-                <p>(Recomendado: ? clips para o lado B)</p>
+                <input class="lado" id="lado-b" name="B" type="number" value="" placeholder="medida lado B em cm">
+                <p id="clip-recomended-lado-b">(Recomendado: ? clips para o lado B)</p>
             </span>
 
             <span>
@@ -41,8 +41,8 @@
                 <input class="x" id="x" name="Diario" type="number" value="25" placeholder="Assentamento diário em m">
             </span>
 
-            <p>Quantidade de clips: ?</p>
-            <p>Quantidade de cunhas: ?</p>
+            <p id="quantidade-clips">Quantidade de clips: ?</p>
+            <p id="quantidade-cunhas">Quantidade de cunhas: ?</p>
 
             <div class="buttons-container">
                 <button class="button" onclick="calcClips()">Calcular</button>
