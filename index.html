@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/style.css">
+    <title>Cálculo de porcelanatos</title>
+</head>
+
+<body>
+
+    <main>
+
+        <img src="./assets/images/porcelanato.png">
+
+        <div class="inputs-container">
+
+            <p>Tamanho do piso/porcelanato em (cm):</p>
+            <span>
+                <p><strong>Lado A&nbsp;</strong></p>
+                <input class="x" id="x" name="A" type="number" value="" placeholder="medida lado A em cm"
+                    oninput="maxLengthFunction()">
+                <p>(Recomendado: ? clips para o lado A)</p>
+            </span>
+
+            <span>
+                <p><strong>Lado B&nbsp;</strong></p>
+                <input class="x" id="x" name="B" type="number" value="" placeholder="medida lado B em cm">
+                <p>(Recomendado: ? clips para o lado B)</p>
+            </span>
+
+            <span>
+                <p><strong>Área total em m²</strong></p>
+                <input class="x" id="x" name="Area" type="number" value="" placeholder="Área total em m²">
+            </span>
+
+            <span>
+                <p><strong>Assentamento diário em m²</strong></p>
+                <input class="x" id="x" name="Diario" type="number" value="25" placeholder="Assentamento diário em m">
+            </span>
+
+            <p>Quantidade de clips: ?</p>
+            <p>Quantidade de cunhas: ?</p>
+
+            <div class="buttons-container">
+                <button class="button" onclick="calcClips()">Calcular</button>
+
+                <button class="button" onclick="clearInputs()">Limpar</button>
+
+                <a target="_blank"
+                    href="https://api.whatsapp.com/send?phone=5554991610040&text=Ol%C3%A1%20Matheus!"><button
+                        class="button">Comprar niveladores</button></a>
+            </div>
+
+        </div>
+
+        <p class="explications"><strong>Notas:</strong>
+            Medida lado A e Medida lado B - São as medidas das laterais do revestimento, por exemplo, se seu
+            revestimento mede 20cm X 90cm, a medida lado A é 20cm e medida lado B é 90cm, estes valores devem ser
+            inseridos nos campos "A" e "B".</p>
+
+        <p class="explications">Recomendado: ? pçs para o lado 'A' e 'B' - Valores recomendados para inserir nas
+            laterais das peças, ao
+            assentar o revestimendo os clips devem ser posicionados nas laterais, este valor refere-se a uma lateral,
+            por exemplo, se seu revestimento possui 50cm X 100cm serão utilizados 2 peças no lado A e 3 peças no lado B
+            como na figura a seguir:</p>
+
+        <img src="./assets/images/clips-no-porcelanato.jpg">
+
+        <p class="explications">Área total (m²) - É a medida da área que será revestida, por exemplo se um quarto mede 4
+            metros de
+            comprimento e 7 metros de largura a área total será de 4m X 7m = 28 metros de área total, neste caso o
+            número 28 é a medida que deverá ser preenchido neste campo.</p>
+
+        <p class="explications">Assentamento diário (m²) - Este campo deve ser preenchido conforme a capacidade de
+            instalação do instalador,
+            por exemplo, um instalador tem uma área de 80m² para instalar, porém durante um dia de trabalho ele consegue
+            revestir uma área de 20m² ele levará 4 dias para terminar o serviço. O valor diário corresponde a 20m²,
+            neste caso o número 20 deverá ser inserido neste campo.</p>
+
+    </main>
+
+
+    <script src="./assets/scripts/script.js"></script>
+</body>
+
+</html>
