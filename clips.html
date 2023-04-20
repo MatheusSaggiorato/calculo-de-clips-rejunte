@@ -10,14 +10,17 @@
 </head>
 
 <body>
+    
+            <a href="home.html"><button>Voltar para o início</button></a>
+            <a href="argamassa.html"><button>Cálculo de argamassa e rejunte</button></a>
 
     <main>
 
-        <img src="./assets/images/porcelanato.png">
+        <img id="revestimento-image" src="./assets/images/porcelanato.png">
 
         <div class="inputs-container">
 
-            <p>Tamanho do piso/porcelanato em (cm):</p>
+            <p>Colocar a medida do revestimento em cm:</p>
             <span>
                 <p><strong>Lado A&nbsp;</strong></p>
                 <input class="lado" id="lado-a" name="A" type="number" value="" placeholder="medida lado A em cm"
@@ -33,19 +36,20 @@
 
             <span>
                 <p><strong>Área total em m²</strong></p>
-                <input class="x" id="x" name="Area" type="number" value="" placeholder="Área total em m²">
+                <input class="x" id="area-total" name="Area" type="number" value="" placeholder="Área total em m²">
             </span>
 
             <span>
                 <p><strong>Assentamento diário em m²</strong></p>
-                <input class="x" id="x" name="Diario" type="number" value="25" placeholder="Assentamento diário em m">
+                <input class="x" id="assentamento-diario" name="Diario" type="number" value=""
+                    placeholder="Assentamento diário em m">
             </span>
 
             <p id="quantidade-clips">Quantidade de clips: ?</p>
             <p id="quantidade-cunhas">Quantidade de cunhas: ?</p>
 
             <div class="buttons-container">
-                <button class="button" onclick="calcClips()">Calcular</button>
+                <button class="button" onclick="calcClipsAndCunhas()">Calcular</button>
 
                 <button class="button" onclick="clearInputs()">Limpar</button>
 
@@ -56,29 +60,41 @@
 
         </div>
 
-        <p class="explications"><strong>Notas:</strong>
-            Medida lado A e Medida lado B - São as medidas das laterais do revestimento, por exemplo, se seu
+        <p><strong>Notas:</strong></p>
+        <p class="explications">
+            <strong>Medida lado A e Medida lado B - </strong>São as medidas das laterais do revestimento, por exemplo,
+            se seu
             revestimento mede 20cm X 90cm, a medida lado A é 20cm e medida lado B é 90cm, estes valores devem ser
-            inseridos nos campos "A" e "B".</p>
+            inseridos nos campos "A" e "B".
+        </p>
 
-        <p class="explications">Recomendado: ? pçs para o lado 'A' e 'B' - Valores recomendados para inserir nas
+        <p class="explications">
+            <strong>Recomendado ? clips para o lado 'A' e 'B' - </strong>Valores recomendados para inserir nas
             laterais das peças, ao
             assentar o revestimendo os clips devem ser posicionados nas laterais, este valor refere-se a uma lateral,
-            por exemplo, se seu revestimento possui 50cm X 100cm serão utilizados 2 peças no lado A e 3 peças no lado B
-            como na figura a seguir:</p>
+            por exemplo, se seu revestimento possui 50cm X 100cm <strong>serão utilizados 2 peças no lado A e 3 peças no
+                lado B</strong>
+            como na figura a seguir:
+        </p>
 
-        <img src="./assets/images/clips-no-porcelanato.jpg">
+        <img id="clips-image" src="./assets/images/clips-no-porcelanato.jpg">
 
-        <p class="explications">Área total (m²) - É a medida da área que será revestida, por exemplo se um quarto mede 4
+        <p class="explications">
+            <strong>Área total (m²) - </strong>É a <strong>medida total da área que será revestida</strong>, por exemplo
+            se um quarto mede 4
             metros de
             comprimento e 7 metros de largura a área total será de 4m X 7m = 28 metros de área total, neste caso o
-            número 28 é a medida que deverá ser preenchido neste campo.</p>
+            número 28 é a medida que deverá ser preenchido neste campo.
+        </p>
 
-        <p class="explications">Assentamento diário (m²) - Este campo deve ser preenchido conforme a capacidade de
-            instalação do instalador,
-            por exemplo, um instalador tem uma área de 80m² para instalar, porém durante um dia de trabalho ele consegue
-            revestir uma área de 20m² ele levará 4 dias para terminar o serviço. O valor diário corresponde a 20m²,
-            neste caso o número 20 deverá ser inserido neste campo.</p>
+        <p class="explications">
+            <strong>Assentamento diário (m²) - </strong>Este campo deve ser preenchido conforme a <strong>capacidade de
+                instalação diária do profissional</strong>, por exemplo, um instalador tem uma área de 80m² para
+            instalar, porém
+            durante um dia de trabalho ele consegue
+            revestir uma área de 20m², então ele levará 4 dias para terminar o serviço. Se o instalador não informar
+            isso, pode considerar 25m² neste campo.
+        </p>
 
     </main>
 

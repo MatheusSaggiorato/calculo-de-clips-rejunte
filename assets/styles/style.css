@@ -7,7 +7,15 @@
 }
 
 body {
-    padding: 2rem 4rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
 }
 
 .inputs-container {
@@ -28,4 +36,23 @@ button {
 
 .explications {
     margin-bottom: 2rem;
+    margin-top: .8rem;
+}
+
+@media screen and (max-width: 500px) {
+
+    #clips-image {
+        width: 320px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    #clips-image {
+        width: 220px;
+    }
+
+    #revestimento-image {
+        width: 220px;
+    }
 }
