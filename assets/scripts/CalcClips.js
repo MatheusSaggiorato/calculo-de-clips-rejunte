@@ -3,80 +3,64 @@ let ladoAInput = document.getElementById("lado-a");
 let ladoBInput = document.getElementById("lado-b");
 let areaTotalInput = document.getElementById("area-total");
 let assentamentoDiarioInput = document.getElementById("assentamento-diario");
-let clipsRecommendedLadoA = 0;
-let clipsRecommendedLadoB = 0;
+let clipsRecommendedLadoA, clipsRecommendedLadoB;
 
 // Adicionar um ouvinte de eventos oninput aos elementos de entrada
 ladoAInput.addEventListener('input', atualizarRecomendacoes);
 ladoBInput.addEventListener('input', atualizarRecomendacoes);
 
 function atualizarRecomendacoes() {
+  const ladoAValue = parseFloat(ladoAInput.value) || 0;
+  const ladoBValue = parseFloat(ladoBInput.value) || 0;
 
-  let ladoAValue = parseFloat(ladoAInput.value) || 0; // Se o valor não for um número, assume 0
-  let ladoBValue = parseFloat(ladoBInput.value) || 0; // Se o valor não for um número, assume 0
-
-  if (ladoAValue === 0 || !Number.isInteger(ladoAValue)) {
-    document.getElementById("clip-recomended-lado-a").textContent = "(Recomendado: ? clips para o lado A)"; // Limpa o resultado se o valor do lado A for zero
-  } else {
-    clipsRecommendedLadoA = '?';
-
-    if (ladoAValue <= 65) {
-      clipsRecommendedLadoA = 2;
-    } else if (ladoAValue <= 110) {
-      clipsRecommendedLadoA = 3;
-    } else if (ladoAValue <= 140) {
-      clipsRecommendedLadoA = 4;
+  function calcularClipsRecomendados(valor) {
+    if (valor <= 10) {
+      return 1;
+    } else if (valor <= 65) {
+      return 2;
+    } else if (valor <= 115) {
+      return 3;
+    } else if (valor <= 140) {
+      return 4;
     } else {
-      clipsRecommendedLadoA = Math.round(ladoAValue / 40);
-      if (!Number.isInteger(clipsRecommendedLadoA)) {
-        clipsRecommendedLadoA = '?';
-      }
+      const clipsRecomendados = Math.round(valor / 40);
+      return Number.isInteger(clipsRecomendados) ? clipsRecomendados : "?";
     }
-
-    let clipRecommendedText = `(Recomendado: ${clipsRecommendedLadoA} clips para o lado A)`;
-    let clipRecommendedElement = document.getElementById("clip-recomended-lado-a");
-    clipRecommendedElement.textContent = clipRecommendedText;
   }
 
-  if (ladoBValue === 0 || !Number.isInteger(ladoBValue)) {
-    document.getElementById("clip-recomended-lado-b").textContent = "(Recomendado: ? clips para o lado B)"; // Limpa o resultado se o valor do lado B for zero
-  } else {
-    clipsRecommendedLadoB = '?';
+  clipsRecommendedLadoA = ladoAValue === 0 || !Number.isInteger(ladoAValue)
+    ? "?"
+    : calcularClipsRecomendados(ladoAValue);
 
-    if (ladoBValue <= 65) {
-      clipsRecommendedLadoB = 2;
-    } else if (ladoBValue <= 110) {
-      clipsRecommendedLadoB = 3;
-    } else if (ladoBValue <= 140) {
-      clipsRecommendedLadoB = 4;
-    } else {
-      clipsRecommendedLadoB = Math.round(ladoBValue / 40);
-      if (!Number.isInteger(clipsRecommendedLadoB)) {
-        clipsRecommendedLadoB = '?';
-      }
-    }
+  clipsRecommendedLadoB = ladoBValue === 0 || !Number.isInteger(ladoBValue)
+    ? "?"
+    : calcularClipsRecomendados(ladoBValue);
 
-    let clipRecommendedText = `(Recomendado: ${clipsRecommendedLadoB} clips para o lado B)`;
-    let clipRecommendedElement = document.getElementById("clip-recomended-lado-b");
-    clipRecommendedElement.textContent = clipRecommendedText;
-  }
+  document.querySelector("#clip-recomended-lado-a").textContent = clipsRecommendedLadoA;
+  document.querySelector("#clip-recomended-lado-b").textContent = clipsRecommendedLadoB;
 }
 
 function calcClipsAndCunhas() {
-  if (ladoAInput.value === "" || ladoBInput.value === '' || areaTotalInput.value === '' || assentamentoDiarioInput.value === '') {
+
+  let ladoAValue = parseFloat(ladoAInput.value) || 0;
+  let ladoBValue = parseFloat(ladoBInput.value) || 0;
+  let areaTotalValue = parseFloat(areaTotalInput.value) || 0;
+  let assentamentoDiarioValue = parseFloat(assentamentoDiarioInput.value) || 0;
+
+  if (ladoAValue === 0 || ladoBValue === 0 || areaTotalValue === 0 || assentamentoDiarioValue === 0) {
     alert('Por favor, preencha todos os campos com valores diferentes de zero');
-  };
+  } else {
 
-  // Implemente seu cálculo aqui
-  let clipsPorRevestimento = clipsRecommendedLadoA * 2 + clipsRecommendedLadoB * 2;
-  let areaDeUmRevestimento = ladoAInput.value * ladoBInput.value / 10000;
-  let quantidadeDeRevestimentos = areaTotalInput.value / areaDeUmRevestimento;
+    // Implemente seu cálculo aqui
+    let clipsPorRevestimento = clipsRecommendedLadoA * 2 + clipsRecommendedLadoB * 2;
+    let areaDeUmRevestimento = ladoAInput.value * ladoBInput.value / 10000;
+    let quantidadeDeRevestimentos = areaTotalValue / areaDeUmRevestimento;
 
-  let quantidadeClips = Math.round(clipsPorRevestimento * quantidadeDeRevestimentos / 2);
-  let quantidadeCunhas = Math.min(quantidadeClips, Math.ceil((assentamentoDiarioInput.value / areaDeUmRevestimento * clipsPorRevestimento) / 2));
+    let quantidadeClips = Math.round(clipsPorRevestimento * quantidadeDeRevestimentos / 2);
+    let quantidadeCunhas = Math.min(quantidadeClips, Math.ceil((assentamentoDiarioInput.value / areaDeUmRevestimento * clipsPorRevestimento) / 2));
 
-  // Atualize o conteúdo dos elementos <p>
-  document.querySelector("#quantidade-clips").textContent = "Quantidade de clips: " + quantidadeClips;
-  document.querySelector("#quantidade-cunhas").textContent = "Quantidade de cunhas: " + quantidadeCunhas;
+    // Atualize o conteúdo dos elementos <p>
+    document.querySelector("#quantidade-clips").textContent = quantidadeClips;
+    document.querySelector("#quantidade-cunhas").textContent = quantidadeCunhas;
+  }
 };
-//fim do script para cálculo de clips e cunhas

@@ -13,38 +13,42 @@
 
 <body>
 
-    <a href="home.html"><button>Voltar para o início</button></a>
-    <a href="clips.html"><button>Cálculo de Clips e cunhas</button></a>
-
-    <main>
+    <main class="main-calculator">
+        
+        <div class="btn-back-container">
+            <a href="index.html"><button class="btn-back">Voltar para o início</button></a>
+            <a href="clips.html"><button class="btn-back">Abrir calculadora de clips/cunhas</button></a>
+        </div>
+        
+        <h1>Calculadora de Rejunte e Argamassa</h1>
 
         <img id="revestimento-image" src="./assets/images/porcelanato.png">
 
         <div class="inputs-container">
 
             <span>
-                <p><strong>Lado A&nbsp;em cm</strong></p>
-                <input id="lado-a-argamassa" name="A" type="number" value="" placeholder="Medida lado A em cm">
+                <p><strong>Lado A&nbsp;(cm)</strong></p>
+                <input id="lado-a-argamassa" type="number" value="" placeholder="Medida lado A (cm)">
             </span>
 
             <span>
-                <p><strong>Lado B&nbsp;em cm</strong></p>
-                <input id="lado-b-argamassa" name="B" type="number" value="" placeholder="Medida lado B em cm">
+                <p><strong>Lado B&nbsp;(cm)</strong></p>
+                <input id="lado-b-argamassa" type="number" value="" placeholder="Medida lado B (cm)">
             </span>
 
             <span>
-                <p><strong>Área total em m²</strong></p>
-                <input id="area-total-argamassa" name="Area" type="number" value="" placeholder="Área total em m²">
+                <p><strong>Área total (m²)</strong></p>
+                <input id="area-total-argamassa"type="number" value="" placeholder="Área total (m²)">
             </span>
 
             <span>
-                <p><strong>Espessura da junta em mm</strong></p>
-                <input id="espessura-junta" name="Diario" type="number" value="" placeholder="Junta em mm">
+                <p><strong>Largura da junta (mm)</strong></p>
+                <input id="espessura-junta" type="number" value="" placeholder="Largura da junta (mm)">
             </span>
 
             <span>
-                <p><strong>Espessura do revestimento em mm</strong></p>
-                <input id="espessura-revestimento" name="Diario" type="number" value="" placeholder="Espessura em mm">
+                <p><strong>Profundidade da junta (mm)</strong></p>
+                <input id="espessura-revestimento" type="number" value="" placeholder="Profundidade da junta (mm)">
             </span>
 
             <span>
@@ -57,27 +61,27 @@
                   
             </span>
 
-            <p id="consumo-min-rejunte">consumo mínimo de rejunte: ?</p>
-            <p id="consumo-max-rejunte">consumo máximo de rejunte: ?</p>
-            <p id="consumo-min-argamassa">consumo mínimo de argamassa: ?</p>
-            <p id="consumo-max-argamassa">consumo máximo de argamassa: ?</p>
-
             <div class="buttons-container">
-                <button class="button" onclick="calcArgamassaRejunte()">Calcular</button>
+                <button class="button-inputs" onclick="calcArgamassaRejunte()"><i class="fa-solid fa-calculator"></i>Calcular</button>
 
-                <button class="button" onclick="clearInputs()">Limpar</button>
+                <button class="button-inputs" onclick="clearInputs()"><i class="fa-solid fa-delete-left"></i>Limpar</button>
 
                 <a target="_blank"
                     href="https://api.whatsapp.com/send?phone=5554991610040&text=Ol%C3%A1%20Matheus!"><button
-                        class="button">Comprar argamassas e rejunte</button></a>
+                        class="button-inputs"><i class="fa-solid fa-cart-shopping"></i>Comprar produtos</button></a>
             </div>
+
+            <p class="bg-p">consumo mínimo de rejunte: <span class="destaque-result" id="consumo-min-rejunte">?</span></p>
+            <p class="bg-p">consumo máximo de rejunte: <span class="destaque-result" id="consumo-max-rejunte">?</span></p>
+            <p class="bg-p">consumo mínimo de argamassa: <span class="destaque-result" id="consumo-min-argamassa">?</span></p>
+            <p class="bg-p">consumo máximo de argamassa: <span class="destaque-result" id="consumo-max-argamassa">?</span></p>
 
         </div>
 
         <p><strong>Notas:</strong></p>
         <p class="explications">O resultado é uma estimativa, não se tratando da quantidade final que será usada, pois o
             consumo real varia conforme os critérios práticos da aplicação, tais como: a condição da base,
-            experiência do aplicador, aproveitamento e capricho.
+            experiência do aplicador, aproveitamento e capricho. recomenda-se comprar 10% a mais para cobrir possíveis perdas.
         </p>
 
         <p class="explications">
@@ -105,8 +109,30 @@
             mas para resultados mais precisos recomendamos medir a espessura do revestimento.
         </p>
 
+    <footer class="clips-footer">
+
+        <a>Developed by Matheus Saggiorato</a>
+
+        <div class="social-midias-container">
+
+            <a href="https://api.whatsapp.com/send?phone=5554999748017&text=Ol%C3%A1%20Matheus!" target="_blank">
+                <i class="fa-brands fa-whatsapp icon-social-midia"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/matheus-saggiorato" target="_blank">
+                <i class="fa-brands fa-linkedin-in icon-social-midia"></i>
+            </a>
+
+            <a href="https://github.com/MatheusSaggiorato" target="_blank">
+                <i class="fa-brands fa-github icon-social-midia"></i>
+            </a>
+
+        </div>
+
+    </footer>
     </main>
 
+    <script defer src="https://kit.fontawesome.com/d2e94242a3.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

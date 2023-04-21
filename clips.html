@@ -10,66 +10,74 @@
 </head>
 
 <body>
-    
-            <a href="home.html"><button>Voltar para o início</button></a>
-            <a href="argamassa.html"><button>Cálculo de argamassa e rejunte</button></a>
 
-    <main>
+    <main class="main-calculator">
+
+        <div class="btn-back-container">
+            <a href="index.html"><button class="btn-back">Voltar para o início</button></a>
+            <a href="argamassa.html"><button class="btn-back">Abrir calculadora de rejunte/argamassa</button></a>
+        </div>
+
+        <h1>Calculadora de Clips e Cunhas</h1>
 
         <img id="revestimento-image" src="./assets/images/porcelanato.png">
 
         <div class="inputs-container">
 
-            <p>Colocar a medida do revestimento em cm:</p>
             <span>
                 <p><strong>Lado A&nbsp;</strong></p>
-                <input id="lado-a" name="A" type="number" value="" placeholder="medida lado A em cm"
-                    oninput="maxLengthFunction()">
-                <p id="clip-recomended-lado-a">(Recomendado: ? clips para o lado A)</p>
+                <input id="lado-a" type="number" value="" placeholder="medida lado A (cm)">
+                <p class="bg-p">Recomendado: <span class="destaque-result" id="clip-recomended-lado-a">?</span> clips
+                    para o lado A</p>
             </span>
 
             <span>
                 <p><strong>Lado B&nbsp;</strong></p>
-                <input id="lado-b" name="B" type="number" value="" placeholder="medida lado B em cm">
-                <p id="clip-recomended-lado-b">(Recomendado: ? clips para o lado B)</p>
+                <input id="lado-b" type="number" value="" placeholder="medida lado B (cm)">
+                <p class="bg-p">Recomendado: <span class="destaque-result" id="clip-recomended-lado-b">?</span> clips
+                    para o lado B</p>
             </span>
 
             <span>
                 <p><strong>Área total em m²</strong></p>
-                <input id="area-total" name="Area" type="number" value="" placeholder="Área total em m²">
+                <input id="area-total" type="number" value="" placeholder="Área total (m²)">
             </span>
 
             <span>
                 <p><strong>Assentamento diário em m²</strong></p>
-                <input id="assentamento-diario" name="Diario" type="number" value=""
-                    placeholder="Assentamento diário em m">
+                <input id="assentamento-diario" type="number" value="" placeholder="Assentamento diário (m²)">
             </span>
 
-            <p id="quantidade-clips">Quantidade de clips: ?</p>
-            <p id="quantidade-cunhas">Quantidade de cunhas: ?</p>
-
             <div class="buttons-container">
-                <button class="button" onclick="calcClipsAndCunhas()">Calcular</button>
+                <button class="button-inputs" onclick="calcClipsAndCunhas()"><i class="fa-solid fa-calculator"></i>Calcular</button>
 
-                <button class="button" onclick="clearInputs()">Limpar</button>
+                <button class="button-inputs" onclick="clearInputs()"><i class="fa-solid fa-delete-left"></i>Limpar</button>
 
                 <a target="_blank"
                     href="https://api.whatsapp.com/send?phone=5554991610040&text=Ol%C3%A1%20Matheus!"><button
-                        class="button">Comprar niveladores</button></a>
+                        class="button-inputs"><i class="fa-solid fa-cart-shopping"></i>Comprar produtos</button></a>
             </div>
+            
+            <p class="bg-p">Quantidade de clips: <span class="destaque-result" id="quantidade-clips">?</span></p>
+            <p class="bg-p">Quantidade de cunhas: <span class="destaque-result" id="quantidade-cunhas">?</span></p>
 
         </div>
 
         <p><strong>Notas:</strong></p>
+
         <p class="explications">
-            <strong>Medida lado A e Medida lado B - </strong>São as medidas das laterais do revestimento, por exemplo,
-            se seu
-            revestimento mede 20cm X 90cm, a medida lado A é 20cm e medida lado B é 90cm, estes valores devem ser
-            inseridos nos campos "A" e "B".
+            recomenda-se comprar 5% a mais para possíveis perdas
         </p>
 
         <p class="explications">
-            <strong>Recomendado ? clips para o lado 'A' e 'B' - </strong>Valores recomendados para inserir nas
+            <strong>Medida lado A e Medida lado B - </strong>São as medidas das laterais do revestimento, por exemplo,
+            se o seu revestimento mede 20cm X 90cm, a medida lado A é 20cm e medida lado B é 90cm, estes valores devem
+            ser inseridos nos campos "A" e "B".
+        </p>
+
+        <p class="explications">
+            <strong>Recomendado ? clips para o lado 'A' e 'B' - </strong>quantidade de clips recomendado para inserir
+            nas
             laterais das peças, ao
             assentar o revestimendo os clips devem ser posicionados nas laterais, este valor refere-se a uma lateral,
             por exemplo, se seu revestimento possui 50cm X 100cm <strong>serão utilizados 2 peças no lado A e 3 peças no
@@ -91,14 +99,37 @@
             <strong>Assentamento diário (m²) - </strong>Este campo deve ser preenchido conforme a <strong>capacidade de
                 instalação diária do profissional</strong>, por exemplo, um instalador tem uma área de 80m² para
             instalar, porém
-            durante um dia de trabalho ele consegue
-            revestir uma área de 20m², então ele levará 4 dias para terminar o serviço. Se o instalador não informar
-            isso, pode considerar 25m² neste campo.
+            durante um dia de trabalho ele consegue revestir uma área de 20m², então ele levará 4 dias para terminar o
+            serviço.
+            <strong>Se o instalador não informar, pode considerar 20m² neste campo</strong>. Esse campo calcula a
+            quantidade de cunhas
+            que o
+            profissional consegue usar em um dia, pois no outro dia ele pode reutilizar as cunhas apos secagem da
+            argamassa.
         </p>
 
+        <div class="clips-footer">
+            <p>Developed by Matheus Saggiorato</p>
+
+            <div class="social-midias-container">
+
+                <a href="https://api.whatsapp.com/send?phone=5554999748017&text=Ol%C3%A1%20Matheus!" target="_blank">
+                    <i class="fa-brands fa-whatsapp icon-social-midia"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/matheus-saggiorato" target="_blank">
+                    <i class="fa-brands fa-linkedin-in icon-social-midia"></i>
+                </a>
+
+                <a href="https://github.com/MatheusSaggiorato" target="_blank">
+                    <i class="fa-brands fa-github icon-social-midia"></i>
+                </a>
+            </div>
+
+        </div>
     </main>
 
-
+    <script defer src="https://kit.fontawesome.com/d2e94242a3.js" crossorigin="anonymous"></script>
     <script src="./assets/scripts/CalcClips.js"></script>
     <script src="./assets/scripts/script.js"></script>
 </body>
