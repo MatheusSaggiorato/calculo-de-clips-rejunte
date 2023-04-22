@@ -1,17 +1,18 @@
 //inicio do script para calculo de clips e cunhas
-let ladoAInput = document.getElementById("lado-a");
-let ladoBInput = document.getElementById("lado-b");
-let areaTotalInput = document.getElementById("area-total");
-let assentamentoDiarioInput = document.getElementById("assentamento-diario");
+const ladoAInputClips = document.getElementById("lado-a");
+const ladoBInputClips = document.getElementById("lado-b");
+const areaTotalInputClips = document.getElementById("area-total");
+const assentamentoDiarioInputClips = document.getElementById("assentamento-diario");
+
 let clipsRecommendedLadoA, clipsRecommendedLadoB;
 
 // Adicionar um ouvinte de eventos oninput aos elementos de entrada
-ladoAInput.addEventListener('input', atualizarRecomendacoes);
-ladoBInput.addEventListener('input', atualizarRecomendacoes);
+ladoAInputClips.addEventListener('input', atualizarRecomendacoes);
+ladoBInputClips.addEventListener('input', atualizarRecomendacoes);
 
 function atualizarRecomendacoes() {
-  const ladoAValue = parseFloat(ladoAInput.value) || 0;
-  const ladoBValue = parseFloat(ladoBInput.value) || 0;
+  const ladoAValue = parseFloat(ladoAInputClips.value) || 0;
+  const ladoBValue = parseFloat(ladoBInputClips.value) || 0;
 
   function calcularClipsRecomendados(valor) {
     if (valor <= 10) {
@@ -40,24 +41,28 @@ function atualizarRecomendacoes() {
   document.querySelector("#clip-recomended-lado-b").textContent = clipsRecommendedLadoB;
 }
 
+function validarCampos(...campos) {
+  for (const campo of campos) {
+    if (!campo.value) {
+      alert('Por favor, preencha todos os campos com valores diferentes de zero');
+      return true;
+    }
+  }
+  return false;
+}
+
 function calcClipsAndCunhas() {
 
-  let ladoAValue = parseFloat(ladoAInput.value) || 0;
-  let ladoBValue = parseFloat(ladoBInput.value) || 0;
-  let areaTotalValue = parseFloat(areaTotalInput.value) || 0;
-  let assentamentoDiarioValue = parseFloat(assentamentoDiarioInput.value) || 0;
-
-  if (ladoAValue === 0 || ladoBValue === 0 || areaTotalValue === 0 || assentamentoDiarioValue === 0) {
-    alert('Por favor, preencha todos os campos com valores diferentes de zero');
+  if (validarCampos(ladoAInputClips, ladoBInputClips, areaTotalInputClips, assentamentoDiarioInputClips)) {
   } else {
 
     // Implemente seu cálculo aqui
-    let clipsPorRevestimento = clipsRecommendedLadoA * 2 + clipsRecommendedLadoB * 2;
-    let areaDeUmRevestimento = ladoAInput.value * ladoBInput.value / 10000;
-    let quantidadeDeRevestimentos = areaTotalValue / areaDeUmRevestimento;
+    const clipsPorRevestimento = clipsRecommendedLadoA * 2 + clipsRecommendedLadoB * 2;
+    const areaDeUmRevestimento = ladoAInputClips.value * ladoBInputClips.value / 10000;
+    const quantidadeDeRevestimentos = areaTotalInputClips.value / areaDeUmRevestimento;
 
-    let quantidadeClips = Math.round(clipsPorRevestimento * quantidadeDeRevestimentos / 2);
-    let quantidadeCunhas = Math.min(quantidadeClips, Math.ceil((assentamentoDiarioInput.value / areaDeUmRevestimento * clipsPorRevestimento) / 2));
+    const quantidadeClips = Math.round(clipsPorRevestimento * quantidadeDeRevestimentos / 2);
+    const quantidadeCunhas = Math.min(quantidadeClips, Math.ceil((assentamentoDiarioInputClips.value / areaDeUmRevestimento * clipsPorRevestimento) / 2));
 
     // Atualize o conteúdo dos elementos <p>
     document.querySelector("#quantidade-clips").textContent = quantidadeClips;

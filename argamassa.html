@@ -14,12 +14,12 @@
 <body>
 
     <main class="main-calculator">
-        
+
         <div class="btn-back-container">
             <a href="index.html"><button class="btn-back">Voltar para o início</button></a>
             <a href="clips.html"><button class="btn-back">Abrir calculadora de clips/cunhas</button></a>
         </div>
-        
+
         <h1>Calculadora de Rejunte e Argamassa</h1>
 
         <img id="revestimento-image" src="./assets/images/porcelanato.png">
@@ -38,7 +38,7 @@
 
             <span>
                 <p><strong>Área total (m²)</strong></p>
-                <input id="area-total-argamassa"type="number" value="" placeholder="Área total (m²)">
+                <input id="area-total-argamassa" type="number" value="" placeholder="Área total (m²)">
             </span>
 
             <span>
@@ -53,38 +53,48 @@
 
             <span>
                 <p><strong>Tipo de rejuntamento</strong></p>
-                <select id="dropdown-tipo-rejunte" onchange="atualizarCoeficente()">
+                <select id="dropdown-tipo-rejunte" onchange="atualizarCoeficenteRejuntamento()">
                     <option value="opcao1">Epóxi / Siliconado</option>
                     <option value="opcao2">Acrílico / Flexível</option>
                     <option value="opcao3">Rejunte sobre rejunte</option>
-                  </select>
-                  
+                </select>
+
             </span>
 
             <div class="buttons-container">
-                <button class="button-inputs" onclick="calcArgamassaRejunte()"><i class="fa-solid fa-calculator"></i>Calcular</button>
+                <button class="button-inputs" onclick="calcularArgamassaRejunte()"><i
+                        class="fa-solid fa-calculator"></i>Calcular</button>
 
-                <button class="button-inputs" onclick="clearInputs()"><i class="fa-solid fa-delete-left"></i>Limpar</button>
+                <button class="button-inputs" onclick="clearInputs()"><i
+                        class="fa-solid fa-delete-left"></i>Limpar</button>
 
                 <a target="_blank"
                     href="https://api.whatsapp.com/send?phone=5554991610040&text=Ol%C3%A1%20Matheus!"><button
                         class="button-inputs"><i class="fa-solid fa-cart-shopping"></i>Comprar produtos</button></a>
             </div>
 
-            <p class="bg-p">consumo mínimo de rejunte: <span class="destaque-result" id="consumo-min-rejunte">?</span></p>
-            <p class="bg-p">consumo máximo de rejunte: <span class="destaque-result" id="consumo-max-rejunte">?</span></p>
-            <p class="bg-p">consumo mínimo de argamassa: <span class="destaque-result" id="consumo-min-argamassa">?</span></p>
-            <p class="bg-p">consumo máximo de argamassa: <span class="destaque-result" id="consumo-max-argamassa">?</span></p>
+            <p class="bg-p">consumo mínimo de rejunte: <span class="destaque-result" id="consumo-min-rejunte">?</span>
+            </p>
+            <p class="bg-p">consumo máximo de rejunte: <span class="destaque-result" id="consumo-max-rejunte">?</span>
+            </p>
+            <p class="bg-p">consumo mínimo de argamassa: <span class="destaque-result"
+                    id="consumo-min-argamassa">?</span></p>
+            <p class="bg-p">consumo máximo de argamassa: <span class="destaque-result"
+                    id="consumo-max-argamassa">?</span></p>
 
         </div>
 
         <p><strong>Notas:</strong></p>
         <p class="explications">O resultado é uma estimativa, não se tratando da quantidade final que será usada, pois o
             consumo real varia conforme os critérios práticos da aplicação, tais como: a condição da base,
-            experiência do aplicador, aproveitamento e capricho. recomenda-se comprar 10% a mais para cobrir possíveis perdas.
+            experiência do aplicador, aproveitamento e capricho. recomenda-se comprar 10% a mais para cobrir possíveis
+            perdas.
         </p>
 
         <p class="explications">
+            <strong>Medida lado A e Medida lado B - </strong>São as medidas das laterais do revestimento, por exemplo,
+            se o seu revestimento mede 20cm X 90cm, a medida lado A é 20cm e medida lado B é 90cm, estes valores devem
+            ser inseridos nos campos "A" e "B".
         </p>
 
         <p class="explications">
@@ -96,40 +106,40 @@
         </p>
 
         <p class="explications">
-            <strong>Espessura da junta (mm) - </strong>Este campo deve ser preenchido conforme a <strong>largura do
+            <strong>Largura da junta (mm) - </strong>Este campo deve ser preenchido conforme a <strong>largura do
                 espaçador que será usado</strong>, sendo geralmente 1mm a 2mm para revestimentos retificados classe "A",
-            e 3mm ou mais para pisos e porcelanatos bold ou classe "C", orientamos a seguir a largura de junta que o
-            fabricante do revestimento indicar.
+            e 3mm ou mais para pisos e porcelanatos bold ou classe "C", recomendado seguir a largura de junta que o
+            fabricante do revestimento indicar, geralmente indicado na caixa do revestimento.
         </p>
 
         <p class="explications">
-            <strong>Espessura do revestimento (mm) - </strong>Este campo deve ser preenchido conforme a
+            <strong>Profundidade da junta (mm) - </strong>Este campo deve ser preenchido conforme a
             <strong>espessura (altura) do revestimento</strong>, sendo uma média de 10mm para porcelanatos mais espessos
             e 7mm para cerâmicas e azulejos mais finos, se não tiver a medida exata pode usar esses números aproximados,
             mas para resultados mais precisos recomendamos medir a espessura do revestimento.
         </p>
 
-    <footer class="clips-footer">
+        <footer class="clips-footer">
 
-        <a>Developed by Matheus Saggiorato</a>
+            <a>Developed by Matheus Saggiorato</a>
 
-        <div class="social-midias-container">
+            <div class="social-midias-container">
 
-            <a href="https://api.whatsapp.com/send?phone=5554999748017&text=Ol%C3%A1%20Matheus!" target="_blank">
-                <i class="fa-brands fa-whatsapp icon-social-midia"></i>
-            </a>
+                <a href="https://api.whatsapp.com/send?phone=5554999748017&text=Ol%C3%A1%20Matheus!" target="_blank">
+                    <i class="fa-brands fa-whatsapp icon-social-midia"></i>
+                </a>
 
-            <a href="https://www.linkedin.com/in/matheus-saggiorato" target="_blank">
-                <i class="fa-brands fa-linkedin-in icon-social-midia"></i>
-            </a>
+                <a href="https://www.linkedin.com/in/matheus-saggiorato" target="_blank">
+                    <i class="fa-brands fa-linkedin-in icon-social-midia"></i>
+                </a>
 
-            <a href="https://github.com/MatheusSaggiorato" target="_blank">
-                <i class="fa-brands fa-github icon-social-midia"></i>
-            </a>
+                <a href="https://github.com/MatheusSaggiorato" target="_blank">
+                    <i class="fa-brands fa-github icon-social-midia"></i>
+                </a>
 
-        </div>
+            </div>
 
-    </footer>
+        </footer>
     </main>
 
     <script defer src="https://kit.fontawesome.com/d2e94242a3.js" crossorigin="anonymous"></script>

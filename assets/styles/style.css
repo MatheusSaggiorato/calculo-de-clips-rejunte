@@ -132,7 +132,6 @@ body {
     font-size: 1.5rem;
     color: var(--light-theme);
     margin-right: .6rem;
-    transition: background-color 0.2s
 }
 
 .icon-social-midia:hover {
