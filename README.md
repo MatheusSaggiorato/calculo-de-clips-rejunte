@@ -1,7 +1,6 @@
 <h1>Cálculadora de consumo de espaçadores clips, cunhas, rejunte e argamassa</h1> 
 
 <p align="center">
- ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/MatheusSaggiorato/calculo-de-clips-rejunte/deploy-to-github-pages?label=deploy&logo=github&style=for-the-badge)
    <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
 </p>
 
