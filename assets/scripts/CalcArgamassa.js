@@ -19,6 +19,16 @@ function atualizarCoeficenteRejuntamento() {
     }
 };
 
+function validarCampos(...campos) {
+    for (const campo of campos) {
+        if (!campo.value) {
+            alert('Por favor, preencha todos os campos com valores diferentes de zero');
+            return true;
+        }
+    }
+    return false;
+};
+
 function calcularArgamassaRejunte() {
 
     const ladoAInputArgamassa = document.getElementById("lado-a-argamassa");
@@ -26,16 +36,6 @@ function calcularArgamassaRejunte() {
     const areaTotalInputArgamassa = document.getElementById("area-total-argamassa");
     const espessuraJunta = document.getElementById("espessura-junta");
     const profundidadeJunta = document.getElementById("espessura-revestimento");
-
-    function validarCampos(...campos) {
-        for (const campo of campos) {
-            if (!campo.value) {
-                alert('Por favor, preencha todos os campos com valores diferentes de zero');
-                return true;
-            }
-        }
-        return false;
-    }
 
     if (validarCampos(ladoAInputArgamassa, ladoBInputArgamassa, areaTotalInputArgamassa, espessuraJunta, profundidadeJunta)) {
     } else {
@@ -49,8 +49,8 @@ function calcularArgamassaRejunte() {
         const quantMaxRejunte = (quantMinRejunte * 1.10).toFixed(3);
 
         // Atualize o conteúdo dos elementos <p>
-        document.querySelector("#consumo-min-rejunte").textContent = `${quantMinRejunte}kg = ${Math.ceil(quantMinRejunte / 1)} saco(s) de 1kg`;
-        document.querySelector("#consumo-max-rejunte").textContent = `${quantMaxRejunte}kg = ${Math.ceil(quantMaxRejunte / 1)} saco(s) de 1kg`;
+        document.querySelector("#consumo-min-rejunte").textContent = `${quantMinRejunte.replace('.', ',')}kg = ${Math.ceil(quantMinRejunte / 1)} saco(s) de 1kg`;
+        document.querySelector("#consumo-max-rejunte").textContent = `${quantMaxRejunte.replace('.', ',')}kg = ${Math.ceil(quantMaxRejunte / 1)} saco(s) de 1kg`;
         document.querySelector("#consumo-min-argamassa").textContent = `${quantMinArgamassa}kg = ${Math.ceil(quantMinArgamassa / 20)} saco(s) de 20kg`;
         document.querySelector("#consumo-max-argamassa").textContent = `${quantMaxArgamassa}kg = ${Math.ceil(quantMaxArgamassa / 20)} sacos(s) de 20kg`;
     }
