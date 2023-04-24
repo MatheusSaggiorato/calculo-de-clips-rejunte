@@ -1,17 +1,9 @@
 <h1>Cálculadora de consumo de espaçadores clips, cunhas, rejunte e argamassa</h1> 
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT"/>
-  <img src="https://img.shields.io/static/v1?label=Netlify&message=deploy&color=blue&style=for-the-badge&logo=netlify"/>
-  <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
-  <img src="http://img.shields.io/static/v1?label=Ruby&message=2.6.3&color=red&style=for-the-badge&logo=ruby"/>
-  <img src="http://img.shields.io/static/v1?label=Ruby%20On%20Rails%20&message=6.0.2.2&color=red&style=for-the-badge&logo=ruby"/>
-  <img src="http://img.shields.io/static/v1?label=TESTES&message=%3E100&color=GREEN&style=for-the-badge"/>
-   <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
+ ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/MatheusSaggiorato/calculo-de-clips-rejunte/deploy-to-github-pages?label=deploy&logo=github&style=for-the-badge)
    <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
 </p>
-
-> Status do Projeto: Concluído :heavy_check_mark:
 
 ### Tópicos 
 
@@ -62,7 +54,9 @@ Essa calculadora foi criada para ajudar a simplificar e agilizar o cálculo do r
 
 Ao utilizar a calculadora, você pode economizar tempo e evitar erros de cálculo. Além disso, a ferramenta é fácil de usar e pode ser acessada por qualquer pessoa com acesso à internet.
 
-![Calculadora de Clips e Rejunte]()
+![Tela de inicio](assets/images/print-tela-inicio.jpeg)
+![Calculadora de Clips e Cunhas](assets/images/print-clips.jpeg)
+![Calculadora de Rejunte e Argamassa](assets/images/print-rejunte-argamassa.jpeg)
 
 
 
