@@ -172,6 +172,11 @@ body {
     transform: scale(1.05);
 }
 
+.espessura-revestimento {
+ width: 280px;
+ border-radius: 5px;
+}
+
 #revestimento-image,
 #clips-image {
     margin: 2rem 0;
@@ -225,11 +230,12 @@ input::placeholder {
     background: var(--dark-blue);
     font-weight: 700;
     border-radius: 5px;
-    font-size: .8rem;
+    font-size: 1rem;
 }
 
 .destaque-result {
     color: var(--orange-jr);
+    margin-top: .3rem;
 }
 
 .inputs-container {
