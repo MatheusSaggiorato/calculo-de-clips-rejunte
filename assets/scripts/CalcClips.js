@@ -43,8 +43,8 @@ function atualizarRecomendacoes() {
 
 function validarCampos(...campos) {
   for (const campo of campos) {
-    if (!campo.value) {
-      alert('Por favor, preencha todos os campos com valores diferentes de zero');
+    if (!campo.value || campo.value <= 0) {
+            alert('Por favor, preencha todos os campos com valores maiores que zero');
       return true;
     }
   }
