@@ -50,7 +50,7 @@
 
             <span>
                 <p><strong>Assentamento diário em m²</strong></p>
-                <input id="assentamento-diario" type="number" value="" placeholder="Assentamento diário (m²)">
+                <input id="assentamento-diario" type="number" value="25" placeholder="Capacidade de assentamento diário (m²)">
             </span>
 
             <div class="buttons-container">
@@ -70,10 +70,11 @@
 
         </div>
 
-        <p><strong>Notas:</strong></p>
+        <p><strong>Instruções:</strong></p>
 
         <p class="explications">
-            recomenda-se comprar 5% a mais para possíveis perdas
+            recomenda-se comprar 5% a mais para possíveis perdas. A quantidade de clips se baseia pelo número de clips
+            recomendado para cada lado da peça, que é informado ao inserir o tamanho do revestimento.
         </p>
 
         <p class="explications">
@@ -104,15 +105,11 @@
 
         <p class="explications">
             <strong>Assentamento diário (m²) - </strong>Este campo deve ser preenchido conforme a <strong>capacidade de
-                instalação diária do profissional</strong>, por exemplo, um instalador tem uma área de 80m² para
-            instalar, porém
-            durante um dia de trabalho ele consegue revestir uma área de 20m², então ele levará 4 dias para terminar o
-            serviço.
-            <strong>Se o instalador não informar, pode considerar 20m² neste campo</strong>. Esse campo calcula a
-            quantidade de cunhas
-            que o
-            profissional consegue usar em um dia, pois no outro dia ele pode reutilizar as cunhas após a secagem parcial da
-            argamassa.
+                instalação diária do profissional</strong>, que será utilizada para calcular o número de cunhas. Por exemplo, o profissional tem uma área de 80m² para
+            revestir, porém, durante um dia de trabalho ele consegue revestir uma área de 20m², então ele levará 4 dias para terminar o
+            serviço, então ele deve comprar cunhas para 1 dia somente, pois pode reutilizar as cunhas no outro dia após a secagem parcial
+            da argamassa.
+            <strong>Se o instalador não informar, pode considerar 25m² neste campo</strong>.
         </p>
 
         <div class="clips-footer">
