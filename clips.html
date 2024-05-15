@@ -27,30 +27,32 @@
 
         <img id="revestimento-image" src="./assets/images/porcelanato.png">
 
+        <a class="instrucao-link" href="#instrucoes">Instruções de preenchimento</a>
+
         <div class="inputs-container">
 
             <span>
-                <p><strong>Lado A&nbsp;</strong></p>
-                <input id="lado-a" type="number" value="" placeholder="medida lado A (cm)">
+                <p><strong>Medida lado A (cm)&nbsp;</strong></p>
+                <input id="lado-a" type="number" value="" placeholder="medida lado A (centímetros)">
                 <p class="bg-p">Recomendado: <span class="destaque-result" id="clip-recomended-lado-a">?</span> clips
                     para o lado A</p>
             </span>
 
             <span>
-                <p><strong>Lado B&nbsp;</strong></p>
-                <input id="lado-b" type="number" value="" placeholder="medida lado B (cm)">
+                <p><strong>Medida lado B (cm)&nbsp;</strong></p>
+                <input id="lado-b" type="number" value="" placeholder="medida lado B (centímetros)">
                 <p class="bg-p">Recomendado: <span class="destaque-result" id="clip-recomended-lado-b">?</span> clips
                     para o lado B</p>
             </span>
 
             <span>
-                <p><strong>Área total em m²</strong></p>
-                <input id="area-total" type="number" value="" placeholder="Área total (m²)">
+                <p><strong>Área total de assentamento (m²)</strong></p>
+                <input id="area-total" type="number" value="" placeholder="Área total (metros quadrados)">
             </span>
 
             <span>
                 <p><strong>Assentamento diário em m²</strong></p>
-                <input id="assentamento-diario" type="number" value="25" placeholder="Capacidade de assentamento diário (m²)">
+                <input id="assentamento-diario" type="number" value="" placeholder="Calcula as cunhas usadas por dia, media 25">
             </span>
 
             <div class="buttons-container">
@@ -70,7 +72,7 @@
 
         </div>
 
-        <p><strong>Instruções:</strong></p>
+        <p id="instrucoes"><strong>Instruções:</strong></p>
 
         <p class="explications">
             recomenda-se comprar 5% a mais para possíveis perdas. A quantidade de clips se baseia pelo número de clips

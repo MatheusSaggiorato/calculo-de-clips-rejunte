@@ -271,6 +271,15 @@ input::placeholder {
     transform: scale(1.05);
 }
 
+.instrucao-link {
+    font-size: 1.2rem;
+    color: #109de3;
+}
+
+#instrucoes {
+    font-size: 2rem;
+}
+
 .explications {
     margin-bottom: 1rem;
     margin-top: .8rem;
