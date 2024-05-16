@@ -1,12 +1,12 @@
-//inicio do script para calculo de clips e cunhas
 const ladoAInputClips = document.getElementById("lado-a");
 const ladoBInputClips = document.getElementById("lado-b");
+const quantidadeClipsLadoA = document.getElementById("quantidade-clips-lado-a");
+const quantidadeClipsLadoB = document.getElementById("quantidade-clips-lado-b");
 const areaTotalInputClips = document.getElementById("area-total");
 const assentamentoDiarioInputClips = document.getElementById("assentamento-diario");
 
 let clipsRecommendedLadoA, clipsRecommendedLadoB;
 
-// Adicionar um ouvinte de eventos oninput aos elementos de entrada
 ladoAInputClips.addEventListener('input', atualizarRecomendacoes);
 ladoBInputClips.addEventListener('input', atualizarRecomendacoes);
 
@@ -44,7 +44,7 @@ function atualizarRecomendacoes() {
 function validarCampos(...campos) {
   for (const campo of campos) {
     if (!campo.value || campo.value <= 0) {
-            alert('Por favor, preencha todos os campos com valores maiores que zero');
+      alert('Por favor, preencha todos os campos com valores maiores que zero');
       return true;
     }
   }
@@ -53,18 +53,18 @@ function validarCampos(...campos) {
 
 function calcClipsAndCunhas() {
 
-  if (validarCampos(ladoAInputClips, ladoBInputClips, areaTotalInputClips, assentamentoDiarioInputClips)) {
+  if (validarCampos(ladoAInputClips, ladoBInputClips, areaTotalInputClips, assentamentoDiarioInputClips, quantidadeClipsLadoA, quantidadeClipsLadoB)) {
   } else {
 
-    // Implemente seu cálculo aqui
-    const clipsPorRevestimento = clipsRecommendedLadoA * 2 + clipsRecommendedLadoB * 2;
+    const clipsLadoA = quantidadeClipsLadoA.value;
+    const clipsLadoB = quantidadeClipsLadoB.value;
+    const clipsPorRevestimento = clipsLadoA * 2 + clipsLadoB * 2;
     const areaDeUmRevestimento = ladoAInputClips.value * ladoBInputClips.value / 10000;
     const quantidadeDeRevestimentos = areaTotalInputClips.value / areaDeUmRevestimento;
 
     const quantidadeClips = Math.round(clipsPorRevestimento * quantidadeDeRevestimentos / 2);
     const quantidadeCunhas = Math.min(quantidadeClips, Math.ceil((assentamentoDiarioInputClips.value / areaDeUmRevestimento * clipsPorRevestimento) / 2));
 
-    // Atualize o conteúdo dos elementos <p>
     document.querySelector("#quantidade-clips").textContent = quantidadeClips;
     document.querySelector("#quantidade-cunhas").textContent = quantidadeCunhas;
   }

@@ -63,6 +63,13 @@ body {
     flex-wrap: wrap;
 }
 
+/* Estilo para o campo de entrada numérica */
+#quantidade-clips-lado-a, #quantidade-clips-lado-b {
+    width: 4rem;
+    /* Ajuste a largura conforme desejado */
+}
+
+
 .main-home {
     width: 50%;
     height: auto;
@@ -173,8 +180,8 @@ body {
 }
 
 .espessura-revestimento {
- width: 280px;
- border-radius: 5px;
+    width: 280px;
+    border-radius: 5px;
 }
 
 #revestimento-image,

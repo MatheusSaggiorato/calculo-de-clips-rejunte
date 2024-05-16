@@ -39,10 +39,20 @@
             </span>
 
             <span>
+                <p>Insira no campo abaixo quantos clips você quer usar no lado A:</p>
+                <input type="number" id="quantidade-clips-lado-a" min="0" max="100" value="" step="1">
+            </span>
+
+            <span>
                 <p><strong>Medida lado B (cm)&nbsp;</strong></p>
                 <input id="lado-b" type="number" value="" placeholder="medida lado B (centímetros)">
                 <p class="bg-p">Recomendado: <span class="destaque-result" id="clip-recomended-lado-b">?</span> clips
                     para o lado B</p>
+            </span>
+
+            <span>
+                <p>Insira no campo abaixo quantos clips você quer usar no lado B:</p>
+                <input type="number" id="quantidade-clips-lado-b" min="0" max="100" value="" step="1">
             </span>
 
             <span>
@@ -52,7 +62,8 @@
 
             <span>
                 <p><strong>Assentamento diário em m²</strong></p>
-                <input id="assentamento-diario" type="number" value="" placeholder="Calcula as cunhas usadas por dia, media 25">
+                <input id="assentamento-diario" type="number" value=""
+                    placeholder="Calcula as cunhas usadas por dia, media de 25m²">
             </span>
 
             <div class="buttons-container">
@@ -63,8 +74,8 @@
                         class="fa-solid fa-delete-left"></i>Limpar</button>
 
                 <a target="_blank"
-                    href="https://api.whatsapp.com/send?phone=5554991610040&text=Ol%C3%A1%20Matheus!"><button
-                        class="button-inputs"><i class="fa-solid fa-cart-shopping"></i>Comprar produtos</button></a>
+                    href="https://api.whatsapp.com/send?phone=5554991610040&text=Ol%C3%A1,%20vim%20da%20calculadora%20de%20instala%C3%A7%C3%A3o%20de%20pisos,%20%C3%A9%20da%20JR?">
+                    <button class="button-inputs"><i class="fa-solid fa-cart-shopping"></i>Comprar produtos</button></a>
             </div>
 
             <p class="bg-p">Quantidade de clips: <span class="destaque-result" id="quantidade-clips">?</span></p>
@@ -107,9 +118,12 @@
 
         <p class="explications">
             <strong>Assentamento diário (m²) - </strong>Este campo deve ser preenchido conforme a <strong>capacidade de
-                instalação diária do profissional</strong>, que será utilizada para calcular o número de cunhas. Por exemplo, o profissional tem uma área de 80m² para
-            revestir, porém, durante um dia de trabalho ele consegue revestir uma área de 20m², então ele levará 4 dias para terminar o
-            serviço, então ele deve comprar cunhas para 1 dia somente, pois pode reutilizar as cunhas no outro dia após a secagem parcial
+                instalação diária do profissional</strong>, que será utilizada para calcular o número de cunhas. Por
+            exemplo, o profissional tem uma área de 80m² para
+            revestir, porém, durante um dia de trabalho ele consegue revestir uma área de 20m², então ele levará 4 dias
+            para terminar o
+            serviço, então ele deve comprar cunhas para 1 dia somente, pois pode reutilizar as cunhas no outro dia após
+            a secagem parcial
             da argamassa.
             <strong>Se o instalador não informar, pode considerar 25m² neste campo</strong>.
         </p>

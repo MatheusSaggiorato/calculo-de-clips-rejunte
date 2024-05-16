@@ -9,13 +9,19 @@ function atualizarCoeficenteRejuntamento() {
             coeficienteRejuntamento = 1.58;
             break;
         case "opcao2":
-            coeficienteRejuntamento = 1.75;
+            coeficienteRejuntamento = 1.58;
             break;
         case "opcao3":
+            coeficienteRejuntamento = 1.75;
+            break;
+        case "opcao4":
+            coeficienteRejuntamento = 1.75;
+            break;
+        case "opcao5":
             coeficienteRejuntamento = 1.32;
             break;
         default:
-            coeficienteRejuntamento = 1.58;
+            coeficienteRejuntamento = 1.75;
     }
 };
 
@@ -40,15 +46,13 @@ function calcularArgamassaRejunte() {
     if (validarCampos(ladoAInputArgamassa, ladoBInputArgamassa, areaTotalInputArgamassa, espessuraJunta, profundidadeJunta)) {
     } else {
 
-        const quantMinArgamassa = areaTotalInputArgamassa.value * 8;
-        const quantMaxArgamassa = areaTotalInputArgamassa.value * 9;
+        const quantMinArgamassa = areaTotalInputArgamassa.value * 8.5;
+        const quantMaxArgamassa = areaTotalInputArgamassa.value * 10;
 
-        //cálculo do consumo dos rejuntes
         const consumoRejuntePorM2 = (ladoAInputArgamassa.value * 10 + ladoBInputArgamassa.value * 10) * profundidadeJunta.value * espessuraJunta.value * coeficienteRejuntamento / ((ladoAInputArgamassa.value * 10) * (ladoBInputArgamassa.value * 10));
         const quantMinRejunte = (areaTotalInputArgamassa.value * consumoRejuntePorM2).toFixed(3);
         const quantMaxRejunte = (quantMinRejunte * 1.10).toFixed(3);
 
-        // Atualize o conteúdo dos elementos <p>
         document.querySelector("#consumo-min-rejunte").textContent = `${quantMinRejunte.replace('.', ',')}kg = ${Math.ceil(quantMinRejunte / 1)} saco(s) de 1kg`;
         document.querySelector("#consumo-max-rejunte").textContent = `${quantMaxRejunte.replace('.', ',')}kg = ${Math.ceil(quantMaxRejunte / 1)} saco(s) de 1kg`;
         document.querySelector("#consumo-min-argamassa").textContent = `${quantMinArgamassa}kg = ${Math.ceil(quantMinArgamassa / 20)} saco(s) de 20kg`;
