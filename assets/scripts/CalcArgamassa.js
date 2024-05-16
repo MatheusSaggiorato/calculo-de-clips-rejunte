@@ -1,27 +1,27 @@
-let coeficienteRejuntamento = 1.58;
+let coeficienteRejuntamento = 1.80;
 
 function atualizarCoeficenteRejuntamento() {
 
-    const rejunteSelecionado = document.getElementById("dropdown-tipo-rejunte").value;
+    const rejunteSelecionado = document.getElementById('dropdown-tipo-rejunte').value;
 
     switch (rejunteSelecionado) {
-        case "opcao1":
-            coeficienteRejuntamento = 1.58;
+        case "opcao1": //siliconado
+            coeficienteRejuntamento = 1.80;
             break;
-        case "opcao2":
-            coeficienteRejuntamento = 1.58;
+        case "opcao2": //flexível
+            coeficienteRejuntamento = 1.42;
             break;
-        case "opcao3":
+        case "opcao3": //acrílico
             coeficienteRejuntamento = 1.75;
             break;
-        case "opcao4":
-            coeficienteRejuntamento = 1.75;
+        case "opcao4": //epóxi/extrafino
+            coeficienteRejuntamento = 1.58;
             break;
-        case "opcao5":
+        case "opcao5": //rejunte sobre rejunte
             coeficienteRejuntamento = 1.32;
             break;
         default:
-            coeficienteRejuntamento = 1.75;
+            coeficienteRejuntamento = 1.80;
     }
 };
 
