@@ -63,11 +63,6 @@ body {
     flex-wrap: wrap;
 }
 
-#quantidade-clips-lado-a, #quantidade-clips-lado-b {
-    width: 4rem;
-}
-
-
 .main-home {
     width: 50%;
     height: auto;
@@ -141,6 +136,10 @@ body {
 
 .icon-social-midia:hover {
     transform: scale(1.1);
+}
+
+#quantidade-clips-lado-a, #quantidade-clips-lado-b {
+    width: 4rem;
 }
 
 
